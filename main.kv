@@ -1,0 +1,2877 @@
+start_screen = """
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#: import WipeTransition kivy.uix.screenmanager.WipeTransition
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+#: import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+#: import SwapTransition kivy.uix.screenmanager.SwapTransition
+#: import CardTransition kivy.uix.screenmanager.CardTransition
+#:import Clock kivy.clock.Clock
+#:import MDRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
+
+
+ScreenManager:
+    id:sm
+    FirstScreen:
+    SecondScreen:
+    ThirdScreen:
+    ForthScreen:
+    FifthScreen:
+    SixthScreen:
+    SeventhScreen:
+    EightScreen:
+    NineScreen:
+    TenScreen:
+    ElevenScreen:
+    TwelveScreen:
+    ThirteenScreen:
+    FourteenScreen:
+    FifteenScreen:
+    SixteenScreen:
+    SeventeenScreen:
+    EighteenScreen:
+    NineteenScreen:
+    TwentyScreen:
+    TwentyOneScreen:
+    TwentyTwoScreen:
+    TwentyThreeScreen:
+    TwentyFourScreen:
+    TwentyFiveScreen:
+    TwentySixScreen:
+    TwentySevenScreen:
+    TwentyEightScreen:
+    TwentyNineScreen:
+    ThirtyScreen:
+    ThirtyOneScreen:
+    ThirtyTwoScreen:
+    ThirtyThreeScreen:
+    ThirtyFourScreen:
+    ThirtyFiveScreen:
+    ThirtySixScreen:
+    ThirtySevenScreen:
+    ThirtyEightScreen:
+    ThirtyNineScreen:
+    FortyScreen:
+    FortyOneScreen:
+    FortyTwoScreen:
+    FortyThreeScreen:
+    FortyFourScreen:
+    FortyFiveScreen:
+    FortySixScreen:
+    FortySevenScreen:
+    FortyEightScreen:
+    FortyNineScreen:
+    FiftyScreen:
+    FiftyOneScreen:
+    FiftyTwoScreen:
+    FiftyThreeScreen:
+    FiftyFourScreen:
+    FiftyFiveScreen:
+    FiftySixScreen:
+    
+
+
+
+
+
+
+<FirstScreen>:
+    name:'first'
+    
+    ScreenManager:
+        
+        MDScreen:
+            
+            md_bg_color:(4/255.0, 123/255.0, 213/255.0,1)
+            BoxLayout:
+                orientation:'vertical'
+                spacing:20
+                padding:20
+                MDFloatLayout:
+                    Image:
+                        source:'App.png'
+                        size_hint:(0.7,0.7)
+                        pos_hint:{'center_x':0.5,'center_y':0.5}
+<SecondScreen>:
+    name:'second'            
+
+    
+    MDScreen:
+        md_bg_color:(4/255.0, 123/255.0, 213/255.0,1)
+        
+        MDFloatLayout:
+            Image:
+                source:'App.png'
+                pos_hint:{'center_x':0.5,'center_y':0.8}
+                size_hint:(0.5,0.5)
+            MDLabel:
+                text:'WELCOME TO TRONIX'
+                font_style:'H5'
+                bold:True
+                pos_hint:{'center_y':0.6}
+                halign:'center'
+                theme_text_color: "Custom"
+                text_color:247/255, 162/255, 0/255,1
+            MDTextFieldRound:
+                id:login_email
+                hint_text:'E-mail'
+                normal_color: app.theme_cls.accent_color
+                color_active: 1, 1, 1, 1
+                size_hint_x:None
+                width:300
+                pos_hint:{'center_x':0.5,'center_y':0.5}
+                    
+            MDTextFieldRound:
+                id:login_password
+                hint_text:'Password'
+                icon_right:'eye-off'
+                normal_color: app.theme_cls.accent_color
+                color_active: 1, 1, 1, 1
+                size_hint_x:None
+                width:300
+                pos_hint:{'center_x':0.5,'center_y':0.4}
+                password:True
+            MDRaisedButton:
+                text:'LOGIN'
+                on_press:
+                    app.login()
+                    app.login_email(login_email.text)
+                    root.manager.transition=SlideTransition(direction='left')
+                pos_hint:{'center_x':0.5,'center_y':0.3}
+                md_bg_color:(247/255, 162/255, 0/255,1)
+             
+            MDFlatButton:
+                text:'Create an Account'
+                size_hint:None,None
+                
+                pos_hint:{'center_x':0.5,'center_y':0.2} 
+                theme_text_color: "Custom"
+                text_color:247/255, 162/255, 0/255,1 
+                on_press:
+                    root.manager.transition=SlideTransition(direction='up')
+                    root.manager.current='fortyNine'
+<FortyNineScreen>:
+    name:'fortyNine'
+    ScreenManager:
+        MDScreen:
+            md_bg_color:(4/255.0,123/255.0,213/255.0,1)
+            
+            MDFloatLayout:
+                Image:
+                    source:'App.png'
+                    pos_hint:{'center_x':0.5,'center_y':0.8}
+                    size_hint:(0.5,0.5)
+                
+                MDTextFieldRound:
+                    id:signup_email
+                    hint_text:'Email'
+                    size_hint_x:None
+                    normal_color: app.theme_cls.accent_color
+                    color_active: 1, 1, 1, 1
+                    width:300
+                    pos_hint:{'center_x':0.5,'center_y':0.6}
+                MDTextFieldRound:
+                    id:signup_password
+                    hint_text:'Password'
+                    icon_right:'eye-off'
+                    size_hint_x:None
+                    normal_color: app.theme_cls.accent_color
+                    color_active: 1, 1, 1, 1
+                    width:300
+                    pos_hint:{'center_x':0.5,'center_y':0.5}
+                    password:True
+                MDTextFieldRound:
+                    id:signup_con_password
+                    hint_text:' Confirm Password'
+                    icon_right:'eye-off'
+                    size_hint_x:None
+                    normal_color: app.theme_cls.accent_color
+                    color_active: 1, 1, 1, 1
+                    width:300
+                    pos_hint:{'center_x':0.5,'center_y':0.4}
+                    password:True
+                
+                MDRaisedButton:
+                    text:'SIGN UP'
+                    elevation:12
+                    pos_hint:{'center_x':0.5,'center_y':0.3}
+                    md_bg_color:(247/255, 162/255, 0/255,1)
+                    on_press:
+                        app.signup()
+                                      
+
+
+<ThirdScreen>:
+    name:'third'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            left_action_items:[['home',lambda x:nav_drawer.toggle_nav_drawer()]]
+                            canvas:
+                                Rectangle:
+                                    source: 'App1.png'
+                                    pos: (((self.parent.size[0])/4)-30,self.pos[1])
+                                    size: (150, 60)
+                        
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50
+                            
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                padding:10
+                                spacing:10
+                                cols:1
+                                MDCard:
+                                  
+                                    size_hint_y:None
+                                    height:80
+                                    BoxLayout:
+                                        orientation:'vertical'
+                                        padding:5
+                                        spacing:10
+                                        MDTextFieldRound:
+                                            id:search
+                                            size_hint:None,None
+                                            width:300
+                                            height:30
+                                            hint_text:'Search for Products'
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            icon_left:'magnify'
+                                            normal_color: app.theme_cls.accent_color
+                                            color_active: 1, 1, 1, 1
+                                        MDFlatButton:
+                                            text:'SEARCH'
+                                            on_press:app.search(search.text,title.text)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            elevation:5
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                MDCard:
+                                    size_hint_y:None
+                                    height: 600
+                                 
+                                    spacing:5
+                                    
+                                    GridLayout:
+                                        cols:2
+                                        
+                                        padding: dp(5), dp(5)
+                                        spacing: dp(5)
+                                        SmartTileWithLabel:
+                                            text:'MINI COMPONENTS '
+                                            source: "mini_components .png"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='forth'
+                                                root.manager.transition.direction='left'
+                                        SmartTileWithLabel:
+                                            text:'SENSORS & MODULES '
+                                            source: "sensor.jpg"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='fifth'
+                                                root.manager.transition.direction='left'
+                                        SmartTileWithLabel:
+                                            text:'BOARDS '
+                                            source: "Breadboard.jpg"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='sixth'
+                                                root.manager.transition.direction='left'
+                                        SmartTileWithLabel:
+                                            text:'POWER SUPPLY '
+                                            source: "power.jpg"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='seventh'
+                                                root.manager.transition.direction='left'
+                                        SmartTileWithLabel:
+                                            text:'INTEGRATED CIRCUITS '
+                                            source: "ics.jpg"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='eight'
+                                                root.manager.transition.direction='left'
+                                        SmartTileWithLabel:
+                                            text:'MOTORS '
+                                            source: "motors.jpg"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='nine'
+                                                root.manager.transition.direction='left'
+                                        SmartTileWithLabel:
+                                            text:'COMPUTER '
+                                            source: "computer.png"
+                                            tile_text_color: app.theme_cls.accent_color
+                                            font_style:'Button'
+                                            box_color:[255/255, 255/255,255/255,1]
+                                            on_press:
+                                                root.manager.current='fiftySix'
+                                                root.manager.transition.direction='left'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                  
+                                    rows:1    
+                                    BoxLayout:
+                                        orientation:'horizontal'
+                                        size_hint_x:None
+                                        width:300
+                                        padding:5    
+                                        Image:
+                                            source:'arduino.jpg'
+                                        MDRaisedButton:
+                                            text:'BUY'
+                                            on_press:
+                                                root.manager.current='fiftySeven'
+                                            md_bg_color:247/255, 162/255, 0/255,1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:300
+                                    padding:20
+                                    spacing:10
+                                    
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:1000
+                                            padding:5    
+                                            Image:
+                                                source:'asus_rog_strix.jpg'
+                                            Image:
+                                                source:'asus_rog_strix1.jpg'
+                                            Image:
+                                                source:'asus_rog_strix2.jpg'
+                                            Image:
+                                                source:'asus_rog_strix3.jpg'
+                                            Image:
+                                                source:'asus_rog_strix4.jpg' 
+                        
+                                
+                                
+                               
+            MDNavigationDrawer:
+                type: "standard"
+                id:nav_drawer
+                BoxLayout:
+                    spacing:'10dp'
+                    
+                    orientation:'vertical'
+                    MDToolbar:
+                        title:'Home'
+                        
+                        left_action_items:[['home',lambda x:app.navigation_draw()]]
+                    ScrollView: 
+                        MDList:
+                            OneLineIconListItem:
+                                text:'Offer Zone'
+                                on_press:
+                                    root.manager.current='fiftyOne'
+                                    root.manager.transition.direction='left'
+                                IconLeftWidget:
+                                    icon:"percent-outline"
+                            OneLineIconListItem:
+                                text:'Sell on TRONIX'
+                                on_press:
+                                    root.manager.current='fortyTwo'
+                                    root.manager.transition.direction='left'
+                                IconLeftWidget:
+                                    icon:"bag-personal"
+                            OneLineIconListItem:
+                                text:'My Account'
+                                on_press:
+                                    root.manager.current='fortyOne'
+                                    root.manager.transition.direction='left'
+                                IconLeftWidget:
+                                    icon:"face"
+                            OneLineIconListItem:
+                                text:'My Orders'
+                                on_press:
+                                    root.manager.current='fortyTwo'
+                                    root.manager.transition.direction='left'
+                                IconLeftWidget:
+                                    icon:"cart"
+                            OneLineIconListItem:
+                                text:'My Wishlist'
+                                on_press:
+                                    root.manager.current='fiftyFive'
+                                    root.manager.transition.direction='left'
+                                IconLeftWidget:
+                                    icon:"license"
+                            OneLineIconListItem:
+                                text:'Logout'
+                                on_press:
+                                    root.manager.current='second'
+                                    root.manager.transition.direction='left'
+                                IconLeftWidget:
+                                    icon:"logout"
+
+                            
+                            OneLineListItem:
+                                text:'Legal Policy'
+                                on_press:
+                                    root.manager.current='fifty'
+                                    root.manager.transition.direction='left'
+                                
+                            OneLineListItem:
+                                text:'Help Center'
+                                on_press:
+                                    root.manager.current='fiftyThree'
+                                    root.manager.transition.direction='left'
+                            OneLineListItem:
+                                text:'Privacy Policy'
+                                on_press:
+                                    root.manager.current='fiftyFour'
+                                    root.manager.transition.direction='left'
+
+
+
+<ForthScreen>:
+    name:'forth'
+    Screen:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title:'MINI COMPONENTS'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            elevation:12
+                            height:50
+                            
+                        ScrollView:
+                            MDGridLayout:
+                                cols:2
+                                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                                row_force_default: True
+                                adaptive_height: True          
+                
+                                padding: dp(20), dp(20)
+                                spacing: dp(10)
+                            
+                                SmartTileWithLabel:
+                                    source:'BC547.jpg'
+                                    text:'BC547'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='ten'
+                                        root.manager.transition.direction='left'
+                                SmartTileWithLabel:
+                                    text:'BC557'
+                                    source:'BC557.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='eleven'
+                                        root.manager.transition.direction='left'
+                                    
+                                        
+                                SmartTileWithLabel:
+                                    text:'RESISTOR SET'
+                                    source:'resistorset.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twelve'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'JUMPER WIRES (M TO M)'
+                                    source:'m_to_m_2.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirteen'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'JUMPER WIRES (F TO F)'
+                                    source:'f_to_f.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='fourteen'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:           
+                                    text:'JUMPER WIRES (M TO F)'
+                                    source:'m_to_f.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='fifteen'
+                                        root.manager.transition.direction='left'
+                                    
+                                        
+                                SmartTileWithLabel: 
+                                    text:'BFW11'
+                                    source:'n-jfet.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='sixteen'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'DIODES'
+                                    source:'diodes.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='seventeen'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'INDUCTOR'
+                                    source:'INDUCTOR.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='eighteen'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:' CERAMIC CAPACITOR'
+                                    source:'Ceramic-Capacitor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='nineteen'
+                                        root.manager.transition.direction='left'
+                                   
+                                SmartTileWithLabel:
+                                    text:'ELECTROLYTIC CAPACITOR'
+                                    source:'electrolytic-capacitor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twenty'
+                                        root.manager.transition.direction='left'
+                        
+
+
+<FifthScreen>:
+    name:'fifth'
+    Screen:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title:'SENSORS & MODULES'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]] 
+                            elevation:12
+                            height:50
+                            
+                        ScrollView:
+                            MDGridLayout:
+                                cols:2
+                                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                                row_force_default: True
+                                adaptive_height: True          
+                
+                                padding: dp(20), dp(20)
+                                spacing: dp(10) 
+                                SmartTileWithLabel:
+                                    text:'DHT11  TEMPERATURE SENSOR'
+                                    source:'temp-humid.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyOne'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'PRESSURE SENSOR'
+                                    source:'pressure-sensor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyTwo'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'PROXIMITY SWITCH PHOTOELECTRIC SWITCH SENSOR '
+                                    source:'proximity-sensor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyThree'
+                                        root.manager.transition.direction='left'
+                                    
+                                        source:'proximity-sensor.jpg'
+                                SmartTileWithLabel:
+                                    text:' ANGULAR POSITION SENSOR'
+                                    source:'position-sensor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyFour'
+                                        root.manager.transition.direction='left'
+                                    
+                                    
+                                SmartTileWithLabel:
+                                    text:' LINEAR POSITION SENSOR'
+                                    source:'lvdt.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='fortyFive'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:' TILT SENSOR (POSITION SENSOR)'
+                                    source:'tilt-sensor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='fortySix'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'ROTARY SENSOR(POSITION SENSOR )'
+                                    source:'rotary-sensor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='fortySeven'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:' SOLAR SENSOR (RADIATION SENSOR)'
+                                    source:'solar-radiation.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='fortyEight'
+                                        root.manager.transition.direction='left'
+                                    
+
+<SixthScreen>:
+    name:'sixth'
+    Screen:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title:'BOARDS & MODULES'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            elevation:12
+                            height:50
+                            
+                        ScrollView:
+                            MDGridLayout:
+                                cols:2
+                                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                                row_force_default: True
+                                adaptive_height: True          
+                                padding: dp(20), dp(20)
+                                spacing: dp(10)
+                                SmartTileWithLabel:
+                                    text:'PRINTED CIRCUIT BOARD (PLAIN)'
+                                    source:'pcb.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyFive'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'UNIVERSAL BOARD'
+                                    source:'universal-board.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentySix'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'BREAD BOARD (PLAIN)'
+                                    source:'bread-board.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentySeven'
+                                        root.manager.transition.direction='left'
+                                    
+
+                        
+
+<SeventhScreen>:
+    name:'seventh'
+    Screen:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title:'POWER SUPPLY'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            elevation:12
+                            height:50
+                            
+                        ScrollView:
+                            MDGridLayout:
+                                cols:2
+                                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                                row_force_default: True
+                                adaptive_height: True          
+                                padding: dp(20), dp(20)
+                                spacing: dp(10)
+                                
+                                SmartTileWithLabel:
+                                    text:'12v DC Adapter'
+                                    source:'12v.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyEight'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'DC BATTERY 9v'
+                                    source:'9v-DC.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='twentyNine'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'DC BATTERY 12v'
+                                    source:'12v-dc.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirty'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'11.1v RECHARGABLE BATTERY'
+                                    source:'11.1v-rechargable.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyOne'
+                                        root.manager.transition.direction='left'
+                                    
+                        
+<EightScreen>:
+    name:'eight'
+    Screen:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title:'ICS INTEGRATED CIRCUITS'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            elevation:12
+                            height:50
+                            
+                        ScrollView:
+                            MDGridLayout:
+                                cols:2
+                                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                                row_force_default: True
+                                adaptive_height: True          
+                                padding: dp(20), dp(20)
+                                spacing: dp(10)
+                                SmartTileWithLabel:
+                                    text:"LOGICAL IC's"
+                                    source:'Logical.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyTwo'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:"INTEL 8086 (MICROPROCESSOR)"
+                                    source:'8086.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyThree'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:"P89V51RD2 (MICROCONTOLLER)"
+                                    source:'p89v51rd2.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyFour'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:"8051 kit"
+                                    source:'8051.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyFive'
+                                        root.manager.transition.direction='left'
+                                    
+                        
+
+<NineScreen>:
+    name:'nine'
+    Screen:
+        NavigationLayout:
+            ScreenManager:
+                Screen:
+                    BoxLayout:
+                        orientation:'vertical'
+                        MDToolbar:
+                            title:'MOTORS & ROBOTICS'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            elevation:12
+                            height:50
+                            
+                        ScrollView:
+                            MDGridLayout:
+                                cols:2
+                                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                                row_force_default: True
+                                adaptive_height: True          
+                                padding: dp(20), dp(20)
+                                spacing: dp(10)
+                                SmartTileWithLabel:
+                                    text:'SG90 (Servo Motor 90Degree)'
+                                    source:'servo.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtySix'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'SG90 (Servo Motor 180Degree)'
+                                    source:'servo.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtySeven'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'SG90 (Servo Motor 360Degree)'
+                                    source:'servo.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyEight'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'DC MOTOR (Brushless)'
+                                    source:'dc-motor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='thirtyNine'
+                                        root.manager.transition.direction='left'
+                                    
+                                SmartTileWithLabel:
+                                    text:'STEPPER MOTOR (BRUSHES)'
+                                    source:'stepper-motor.jpg'
+                                    tile_text_color: app.theme_cls.accent_color
+                                    font_style:'Button'
+                                    box_color:[255/255, 255/255,255/255,1]
+                                    on_press:
+                                        root.manager.current='forty'
+                                        root.manager.transition.direction='left'
+                                    
+<TenScreen>:
+    name:'ten'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'BC547.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'BC547'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60 
+                                    
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:200
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'BC547.jpg'
+                                            Image:
+                                                source:'BC547_1.png'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'BC547 (NPN Transistor)'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'Transistor'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 5.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:200
+                                    padding:5
+                                    spacing:5       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        orientation:'horizontal'
+                                        spacing:20
+                                        padding:20
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. Pin Configuration '
+                                        font_style:'Button'
+                                        
+                                    MDLabel:
+                                        text:'  pin 1:-Collector,pin 2:- Base, pin3:- Emitter.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2. DC Current Gain (hFE) is 800 maximum.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Continuous Collector current (IC) is 100mA.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Emitter Base Voltage (VBE) is 6V.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.Base Current(IB) is 5mA maximum.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.Available in To-92 Package.'
+                                        font_style:'Caption'
+                                    
+                                                          
+                        
+                    
+                    
+                            
+<ElevenScreen>:
+    name:'eleven'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'BC547.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'BC557'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60
+                            
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'BC557.jpg'
+                                            Image:
+                                                source:'BC557_1.jpg'
+                                            Image:
+                                                source:'BC557_2.png'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'BC557 (PNP Transistor)'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'Transistor'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                            
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:'5.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. Pin Configuration '
+                                        font_style:'Button'
+                                        bold:True
+                                    MDLabel:
+                                        text:'  pin 1:- Base, pin 2:- Collector, pin3:- Emitter.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2. DC Current Gain (hFE) is 300 maximum.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Continuous Emitter current (IC) is 100mA.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Emitter Base Voltage (VBE) is 6V.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.Base Current(IB) is 5mA maximum.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.Available in To-92 Package.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'BC557 Equivalent PNP Transistors'
+                                        font_style:'Button'
+                                        bold:True
+                                    MDLabel:
+                                        text:'  BC157, BC558, 2N3906, 2SA1943, BD140, S8550,  TIP127, TIP42.'
+                                        font_style:'Caption' 
+                        
+                    
+<TwelveScreen>:
+    name:'twelve'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'resistorset.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'Resistors'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60
+                            
+                        
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'resistorset.jpg'
+                                            Image:
+                                                source:'resistorset_1.jpg'
+                                            Image:
+                                                source:'resistorset_2.jpg'
+                                            Image:
+                                                source:'resistorset_3.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Resistor Set(Pack of 1000) '
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'Resistor'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 280.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. Carbon film resistors, 50+ values '
+                                        font_style:'Caption'
+                                        
+                                    MDLabel:
+                                        text:'2.Quantity: 1000 pieces (20 each.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Tolerance: 5 percent, power rating: 0.25 watt.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.weight: 370 gms.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.good quality product.'
+                                        font_style:'Caption'
+                                
+                                
+                    
+                    
+    
+
+<ThirteenScreen>:
+    name:'thirteen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'m_to_m.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'Jumper Wires (M To M)'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60
+                            
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'m_to_m_2.jpg'
+                                            Image:
+                                                source:'m_to_m_1.jpg'
+                                            Image:
+                                                source:'m_to_m.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Jumper Wires '
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'(Male to Male)'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 65.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. 40P color jumper wire.'
+                                        font_style:'Caption'
+                                        
+                                    MDLabel:
+                                        text:'2.Length: 100mm.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Weight: 25 gm.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Compatible with 2.54mm spacing pin headers.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.High quality and in good working condition.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.Durable and reusable.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'7.Easy to install and use.'
+                                        font_style:'Caption'
+                        
+                    
+        
+
+
+<FourteenScreen>:
+    name:'fourteen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'f_to_f.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'Jumper Wires (F To F)'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]] 
+                            right_action_items:[['cart',lambda x:root.set_screen1()]] 
+                            height:60
+                            
+                        
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'f_to_f.jpg'
+                                            Image:
+                                                source:'f_to_f_1.jpg'
+                                            Image:
+                                                source:'f_to_f_2.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Jumper Wires'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'(Female to Female)'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:'65.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                
+                                            
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. 40P color jumper wire.'
+                                        font_style:'Caption'
+                                        
+                                    MDLabel:
+                                        text:'2.Length: 100mm.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Weight: 25 gm.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Compatible with 2.54mm spacing pin headers.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.High quality and in good working condition.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.Durable and reusable.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'7.Easy to install and use.'
+                                        font_style:'Caption'
+                                
+                    
+        
+            
+    
+
+<FifteenScreen>:
+    name:'fifteen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'m_to_f.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'Jumper Wires (M To F)'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]  
+                            height:60
+                            
+                        
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'m_to_f.jpg'
+                                            Image:
+                                                source:'m_to_f_1.jpg'
+                                            Image:
+                                                source:'m_to_f_2.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Jumper Wires'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'(Male to Female)'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 65.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                
+                                            
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. 40P color jumper wire.'
+                                        font_style:'Caption'
+                                        
+                                    MDLabel:
+                                        text:'2.Length: 100mm.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Weight: 25 gm.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Compatible with 2.54mm spacing pin headers.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.High quality and in good working condition.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.Durable and reusable.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'7.Easy to install and use.'
+                                        font_style:'Caption'
+    
+                                            
+        
+    
+          
+
+<SixteenScreen>:
+    name:'sixteen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'n-jfet.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'BFW11'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]  
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'n-jfet.jpg'
+                                            Image:
+                                                source:'n-jfet1.jpg'
+                                            Image:
+                                                source:'njfet2.png'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'BFW11'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'n-channel JFET'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 88.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)    
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. Metal TO-72 can package.'
+                                        font_style:'Caption'
+                                        
+                                    MDLabel:
+                                        text:'2.Advanced process technology.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3. Low error voltage.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Fast switching speed    .'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.Full-voltage operation.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.High power and current handling capability.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'7.Easy to  use.'
+                                        font_style:'Caption'
+                                   
+                                    
+                        
+                    
+                    
+<SeventeenScreen>:
+    name:'seventeen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'diodes.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'DIODES'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]  
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'diodes.jpg'
+                                            Image:
+                                                source:'diodes1.jpg'
+                                            Image:
+                                                source:'diodes2.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Diode'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1N5819-T(Semiconductor)'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 10.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)   
+                                            
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:250
+                                    padding:10
+                                    spacing:2
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. Category:-Semiconductor Products.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2.Diode Type:-Schottky.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3. Voltage:- DC Reverse (Vr) (Max):-40V.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Current - Average Rectified (Io):-1A.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.Voltage - Forward (Vf) (Max) @ If :- 600mV @ 1A.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'6.Speed :- Fast Recovery =< 500ns, > 200mA (Io).'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'7.Current - Reverse Leakage @ Vr :- 1mA @ 40V.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'8.Capacitance @ Vr, F :- 110pF @ 4V, 1MHz.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'9.Mounting Type :- Through Hole.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'10.Package / Case :- DO-204AL, DO-41, Axial.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'11.Operating Temperature - Junction :- -65°C ~ 125°C.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'12.Base Part Number:- 1N5819.'
+                                        font_style:'Caption'
+                    
+                    
+        
+    
+                    
+                    
+<EighteenScreen>:
+    name:'eighteen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                        source:'INDUCTOR.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'INDUCTOR'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]  
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                            height:60
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'INDUCTOR.jpg'
+                                            Image:
+                                                source:'INDUCTOR1.jpg'
+                                            Image:
+                                                source:'INDUCTOR2.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'INDUCTOR'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'Chokes & Coil'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:' 52.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                
+                                            
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:350
+                                    padding:10
+                                    spacing:10
+                                    MDLabel:
+                                        text:'Features'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1. Combined with high frequency ferrite core.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2.Good for high current circuit.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3. High saturation current.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Firm structure.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.Coated with UV tube available.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'Characteristics.'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1.Inductance range: 1.0uH to 1000uH.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2.Operating temperature: -20℃ to 80℃.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Customized to customer specifications.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'Applications.'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1.TV.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2.Stereo components.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.Satellite receiver.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'4.Toy.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'5.Computer.'
+                                        font_style:'Caption'
+                    
+                    
+        
+
+<NineteenScreen>:
+    name:'nineteen'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                    
+                        source:'Ceramic-Capacitor.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'CERAMIC CAPACITOR'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]  
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'Ceramic-Capacitor.jpg'
+                                            Image:
+                                                source:'Ceramic-Capacitor.jpg'
+                                            Image:
+                                                source:'Ceramic-Capacitor.jpg'
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:100
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Ceramic Capacitor set'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:' Capacitor'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:'1000.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                
+                                            
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:10
+                                    spacing:10
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'Package Includes:-60 x 0.1 uF – 60pcs,60 x 0.15 uF – 60pcs,60 x 0.22 uF – 60pcs,60 x 0.33 uF – 60pcs,60 x 0.47 uF – 60pcs,60 x 0.68 uF – 60pcs,60 x 1 uF – 60pcs,60 x 2.2 uF – 60pcs,60 x 4.7 uF – 60pcs,60 x 10 uF – 60pcs'
+                                        font_style:'Caption'
+                    
+                    
+                    
+        
+
+<TwentyScreen>:
+    name:'twenty'
+    MDScreen:
+        NavigationLayout:
+            ScreenManager:
+                MDScreen:
+                    FitImage:
+                    
+                        source:'electrolytic-capacitor.jpg'
+                    GridLayout:
+                        cols:1
+                        MDToolbar:
+                            id:toolbar
+                            title:'ELECTROLYTIC CAPACITOR'
+                            font_style:'Caption'
+                            left_action_items:[['arrow-left',lambda x:root.set_screen()]]  
+                            right_action_items:[['cart',lambda x:root.set_screen1()]]
+                        ScrollView:
+                            scroll_timeout :250
+                            scroll_distance : 50    
+                            GridLayout:
+                                size_hint_y:None
+                                height:self.minimum_height
+                                spacing:10
+                                padding:20
+                                cols:1
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:20
+                                    spacing:10
+                                    rows:1
+                                    ScrollView:
+                                        BoxLayout:
+                                            orientation:'horizontal'
+                                            size_hint_x:None
+                                            width:600    
+                                            Image:
+                                                source:'electrolytic-capacitor.jpg'
+                                            Image:
+                                                source:'electrolytic-capacitor1.jpg'
+                                            
+                                            Image:
+                                                source:'electrolytic-capacitor2.jpg'
+                                            Image:
+                                                source:'electrolytic-capacitor3.jpg'
+                                            Image:
+                                                source:'electrolytic-capacitor4.jpg'
+                                
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:10
+                                    spacing:5
+                                    elevation:15
+                                    MDLabel:
+                                        id:product
+                                        text:'Electrolytic Capacitor Assortment Kit Set Box'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:' Capacitor'
+                                        font_style:'Caption'
+                                    BoxLayout:
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        spacing:5
+                                        MDIconButton:
+                                            icon:'star'
+                                            user_font_size:24
+                                            theme_text_color:'Custom'
+                                            text_color:(1,1,0,1)
+                                        MDLabel:
+                                            text:'4.0'
+                                            bold:True
+                                        
+                                        MDLabel:
+                                            id:price
+                                            halign:'right'
+                                            text:'1000.00 '
+                                            bold:True
+                                            theme_text_color:'Custom'
+                                            text_color:(1,0,1,1)
+                                MDCard:
+                                    orientation:'vertical'
+                                    spacing:10
+                                    size_hint_y:None
+                                    height:200
+                                    padding:10
+                                    spacing:20       
+                                    MDLabel:
+                                        text:'Quantity'
+                                        font_style:'H6'
+                                        bold:'True'
+                                    BoxLayout:
+                                        spacing:40
+                                        padding:10
+                                        size_hint_y:None
+                                        height:self.minimum_height
+                                        Widget:
+                                        MDIconButton:
+                                            icon:'minus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value -=1 if label_value.value > 0 else  0
+                                        Label:
+                                            id:label_value
+                                            value:0
+                                            text:str(self.value)
+                                            size_hint:None,None
+                                            size:self.texture_size
+                                            color:0,0,0,1
+                                            pos_hint:{'center_y':.5}
+                                        MDIconButton:
+                                            icon:'plus'
+                                            md_bg_color:(1,1,0,1)
+                                            user_font_size:12
+                                            on_release:label_value.value +=1
+                                        Widget:
+                                    MDFloatLayout:
+                                        MDRaisedButton:
+                                            text:"ADD TO CART"
+                                            md_bg_color:(247/255, 162/255, 0/255,1)
+                                            pos_hint:{'center_x':0.5,'center_y':0.5}
+                                            on_press:app.buy(product.text,price.text,label_value.value)
+                                    
+                                
+                                MDCard:
+                                    orientation:'vertical'
+                                    size_hint_y:None
+                                    height:150
+                                    padding:10
+                                    spacing:10
+                                    MDLabel:
+                                        text:'Description'
+                                        font_style:'H6'
+                                        bold:True
+                                    MDLabel:
+                                        text:'Package Includes:-'
+                                        font_style:'Button'
+                                        bold:True
+                                    MDLabel:
+                                        text:'1.215pcs Electrolytic Capacitor Assortment Kit Set Box:Capacitance Range:0.1UF-330UF.'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'2.Quantity:215piecesValues:15Assorted kit of high quality electrolytic capacitors..'
+                                        font_style:'Caption'
+                                    MDLabel:
+                                        text:'3.15 different values and 215 pieces in total.'
+                                        font_style:'Caption'        
+                    
+<TwentyOneScreen>:
+    name:'twentyOne'
+    
+<TwentyTwoScreen>:
+    name:'twentyTwo'
+    
+
+<TwentyThreeScreen>:
+    name:'twentyThree'
+    
+            
+                  
+<TwentyFourScreen>:
+    name:'twentyFour'
+    
+                    
+<TwentyFiveScreen>:
+    name:'twentyFive'
+    
+
+
+<TwentySixScreen>:
+    name:'twentySix'
+    
+            
+<TwentySevenScreen>:
+    name:'twentySeven'
+    
+
+<TwentyEightScreen>:
+    name:'twentyEight'
+    
+                
+<TwentyNineScreen>:
+    name:'twentyNine'
+    
+
+
+<ThirtyScreen>:
+    name:'thirty'
+    
+                
+                
+<ThirtyOneScreen>:
+    name:'thirtyOne'
+    
+                
+            
+                    
+                    
+                    
+<FortyOneScreen>:
+    name:'fortyOne'
+    Screen:
+        GridLayout:
+            cols:1
+            
+            MDToolbar:
+                title:'PROFILE'
+                elevation:12
+                left_action_items:[['arrow-left',lambda x:root.set_screen()]]
+            
+                
+            GridLayout:
+                cols:2
+                spacing:30
+                padding:20
+                MDTextField:
+                    hint_text:'Enter Username'
+                    helper_text:'UserName'
+                    helper_text_mode:'on_focus'
+                    mode:'rectangle'
+                    size_hint_x:None
+                    width:150
+                    
+                MDTextField:
+                    
+                    hint_text:'Enter Email'
+                    helper_text:'Enter only @gmail.com'
+                    helper_text_mode:'on_focus'
+                    mode:'rectangle'
+                    size_hint_x:None
+                    width:150
+            GridLayout:
+                cols:1
+                padding:20
+                spacing:10
+                MDTextField:
+                    hint_text:'Address'
+                    mode:'rectangle'
+                    size_hint:.5,None
+                    
+            GridLayout:
+                cols:2
+                padding:20
+                spacing:30
+                MDTextField:
+                    hint_text:'Phone Number'
+                    mode:'rectangle'
+                    size_hint_x:None
+                    width:150
+                MDTextField:
+                    hint_text:'Pincode' 
+                    mode:'rectangle'
+                    size_hint_x:None
+                    width:150
+                    
+            GridLayout:
+                cols:2
+                padding:20
+                spacing:20
+                
+                MDRaisedButton:
+                    text:'SAVE'
+                    elevation:12
+                    on_release:app.show_popup()
+                    
+                
+<FortyTwoScreen>:
+    name:'fortyTwo'
+    MDScreen:
+        GridLayout:
+            cols:1
+            MDToolbar:
+                title:'My Orders'
+                left_action_items:[['arrow-left',lambda x:root.set_screen()]]                  
+
+
+               
+<FiftySixScreen>:
+    name:'fiftySix'
+    MDScreen:
+        GridLayout:
+            cols:1
+            MDToolbar:
+                title:'COMPUTER'
+                left_action_items:[['arrow-left',lambda x:root.set_screen()]]                        
+            Widget:                   
+                                
+
+    
+                                    
+
+                            
+            
+            
+        
+                    
+                
+         
+        
+        
+            
+            
+                                                    
+"""
